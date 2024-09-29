@@ -1,0 +1,778 @@
+$bg-color:#15202F;
+$sec-color:#111A25;
+$def-color:#ffffff;
+
+/* Importing Fonts from Google API */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+body{
+    background-color: $bg-color;
+    color:$def-color;
+    font-family:Montserrat;
+    font-weight:400;
+}
+
+/* Declaring Mixin and Style Controllers */
+
+@mixin padding-controller($top,$bottom,$right,$left){
+    padding-top:$top;
+    padding-bottom:$bottom;
+    padding-right:$right;
+    padding-left:$left;
+}
+
+@mixin margin-controller($top,$bottom,$right,$left){
+   margin-top:$top;
+   margin-bottom:$bottom;
+   margin-right:$right;
+   margin-left:$left;
+}
+
+@mixin text-controller($typo,$size,$weight,$transform,$space,$color){
+   font-family:$typo;
+   font-size:$size;
+   font-weight:$weight;
+   text-transform:$transform;
+   letter-spacing:$space;
+   color:$color;
+}
+
+
+/* Mixin Declaration Stops Here*/
+
+.logo{
+    img{
+        width:70%;
+    }
+}
+
+.navigation{
+
+
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        margin-left:30%;
+
+        li{
+          float:left;
+          @include margin-controller(7%,0 ,6% ,0 );
+          a{
+            display: block;
+            text-align:center;
+            text-decoration:none;
+            @include text-controller(Montserrat,14px ,700 ,uppercase ,none ,$def-color );
+            transition:0.5s ease-in-out;
+          }
+          a:hover{
+            color: #9F66FC;
+          }
+        
+        }
+
+        li.active{
+
+            a{
+            background: linear-gradient(90deg, #9F66FC 0%, #DCC7FF 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            text-align:center;
+            text-decoration:none;
+            transition:1s ease-in-out;
+            }
+          }
+    }
+}
+
+
+
+.btn{
+  @include padding-controller(15px,15px ,50px ,50px );
+  @include text-controller(Montserrat,12px ,700 ,uppercase ,4px ,$bg-color );
+  border:none;
+  border-radius:40px;
+  background: linear-gradient(90deg, #9F66FC 0%, #DCC7FF 100%);
+  float:right;
+  margin-top:9%;
+  transition:0.5s ease-in-out;
+  position:relative;
+}
+
+.btn:hover{
+  background: linear-gradient(270deg, #9F66FC 0%, #4A1F90 100%), #E5D0C4;
+  @include text-controller(Montserrat,12px ,700 ,uppercase ,36% ,$def-color );
+}
+
+
+/* Hamburger Open Menu*/
+
+.menu-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #9F66FC 0%, #DCC7FF 100%), #9F66FC;
+  z-index: 9999;
+}
+
+.menu {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: white;
+
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 36px 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  @include text-controller(Montserrat,24px ,700 ,uppercase ,7px , $def-color);
+  transition:0.5s ease-in-out;
+}
+
+.menu a:hover{
+  color:$bg-color;
+}
+
+.menu li.active a{
+  @include text-controller(Montserrat,24px ,700 ,uppercase ,7px , $bg-color);
+}
+
+.hamburger{
+  float:right;
+  position:relative;
+}
+
+.menu-close{
+  float:right;
+  margin-right:5%;
+  margin-top:5%;
+}
+
+
+
+
+.btn-d{
+  @include padding-controller(15px,15px ,50px ,50px );
+  @include text-controller(Montserrat,12px ,700 ,uppercase ,4px ,#9F66FC);
+  border:none;
+  border-radius:40px;
+  background:$bg-color;
+  float:right;
+  margin-top:9%;
+  transition:0.5s ease-in-out;
+  bottom:5%;
+  left:25%;
+}
+
+.btn-d:hover{
+  background: linear-gradient(270deg, #9F66FC 0%, #4A1F90 100%), #E5D0C4;
+  @include text-controller(Montserrat,12px ,700 ,uppercase ,36% ,$def-color );
+}
+
+
+.bg-hero{
+  padding:60px;
+  img{
+    width:100%;
+    height:auto;
+  }
+}
+
+.content-hero{
+  text-align:center;
+  padding:60px;
+  margin-top:-33%;
+  h4{
+    @include text-controller(Montserrat,12px, 700,uppercase ,7px ,$def-color );
+  }
+  h1{
+    @include text-controller(Poppins,64px ,400 ,none ,none ,$def-color );
+    margin-top:50px;
+  }
+  span{
+    @include text-controller(Poppins,64px,700 ,none ,none ,$def-color );
+  }
+}
+
+
+.hero-btn{
+  @include padding-controller(15px,15px ,60px ,60px );
+  @include text-controller(Montserrat,12px ,700 ,uppercase ,4px ,$bg-color );
+  border:none;
+  border-radius:40px;
+  background: linear-gradient(90deg, #9F66FC 0%, #DCC7FF 100%);
+  transition:0.5s ease-in-out;
+}
+
+.hero-btn:hover{
+  background: linear-gradient(270deg, #9F66FC 0%, #4A1F90 100%), #E5D0C4;
+  @include text-controller(Montserrat,12px ,700 ,uppercase ,36% ,$def-color );
+}
+
+
+
+
+.img-frames{
+  text-align:center;
+  img{
+    width:100%;
+  }
+}
+
+
+.about{
+
+  text-align: center;
+
+  h4{
+    @include text-controller(Montserrat,12px ,700 ,uppercase ,7px ,$def-color );
+  }
+  h1{
+    @include text-controller(Poppins,64px ,700 ,none ,none ,$def-color );
+  }
+  p{
+    @include text-controller(Montserrat,16px ,400 ,none ,none ,$def-color );
+    margin-bottom:4%;
+  }
+  img{
+    transition:0.5s ease-in-out;
+  }
+  img:hover{
+    transform: perspective(400px) rotateY(3deg);
+  }
+}
+
+.quality{
+  background:$sec-color;
+  padding-top:60px;
+  padding-bottom:60px;
+  margin-top:4%;
+  text-align:center;
+
+  h4{
+    @include text-controller(Montserrat,12px ,700 ,uppercase ,7px ,$def-color );
+  }
+  h1{
+    @include text-controller(Poppins,64px ,700 ,none ,none ,$def-color );
+  }
+
+}
+
+.q-block{
+  background:$bg-color;
+  border:none;
+  border-radius:20px;
+  padding-top:60px;
+  padding-bottom:60px;
+  padding-left:20px;
+  padding-right:20px;
+  margin-top:20px;
+  text-align:left;
+  transition:0.5s ease-in-out;
+  img{
+    width:36%;
+    height:auto;
+  }
+  h3{
+    @include text-controller(Poppins,24px ,700 ,none ,none ,$def-color );
+  }
+  p{
+    @include text-controller(Montserrat,14px ,400 ,none ,none ,$def-color );
+  }
+  h4{
+    @include text-controller(Montserrat,10px ,700 ,uppercase ,7px ,$def-color );
+  }
+}
+
+
+.q-block:hover{
+  transform: perspective(400px) rotateY(10deg);
+  background: linear-gradient(338deg, #9F66FC -17.36%, #15202F 15.44%, #15202F 48.25%, #15202F 81.05%, #9F66FC 113.85%);
+}
+
+
+.portfolio-ui{
+  background-image: url('../img/ui-portfolio-bg.png');
+  background-size: cover; 
+  background-repeat: no-repeat;
+  padding-top:40px;
+  padding-bottom:40px;
+  h4{
+    @include text-controller(Montserrat,12px ,700 ,uppercase ,7px ,$def-color );
+  }
+  h1{
+    @include text-controller(Poppins,64px ,700 ,none ,none ,$def-color );
+  }
+}
+
+
+.portfolio-3d{
+  background-image: url('../img/3d-portfolio-bg.png');
+  background-size: cover; 
+  background-repeat: no-repeat;
+  padding-top:40px;
+  padding-bottom:40px;
+  h4{
+    @include text-controller(Montserrat,12px ,700 ,uppercase ,7px ,$def-color );
+  }
+  h1{
+    @include text-controller(Poppins,64px ,700 ,none ,none ,$def-color );
+  }
+}
+
+
+.section-l{
+  padding-top:60px;
+  padding-bottom:60px;
+  text-align:left;
+  h4{
+    @include text-controller(Montserrat,12px ,700 ,uppercase ,7px ,$def-color );
+  }
+  h1{
+    @include text-controller(Poppins,64px ,700 ,none ,none ,$def-color );
+  }
+  p{
+    @include text-controller(Montserrat,16px ,400 ,none ,none ,$def-color );
+
+  }
+  img{
+    transition:0.5s ease-in-out;
+  }
+  img:hover{
+    transform: perspective(400px) rotateY(-10deg);
+  }
+}
+
+.section-btn{
+  @include padding-controller(15px,15px ,60px ,60px );
+  @include text-controller(Montserrat,12px ,700 ,uppercase ,4px ,$bg-color );
+  border:none;
+  border-radius:40px;
+  background: linear-gradient(90deg, #9F66FC 0%, #DCC7FF 100%);
+  transition:0.5s ease-in-out;
+  display:inline-block;
+  margin-top:40px;
+}
+
+.section-btn:hover{
+  background: linear-gradient(270deg, #9F66FC 0%, #4A1F90 100%), #E5D0C4;
+  @include text-controller(Montserrat,12px ,700 ,uppercase ,36% ,$def-color );
+  border:none;
+}
+
+
+.section-r{
+  background-color:$sec-color;
+  padding-top:60px;
+  padding-bottom:60px;
+  text-align:right;
+  h4{
+    @include text-controller(Montserrat,12px ,700 ,uppercase ,7px ,$def-color );
+  }
+  h1{
+    @include text-controller(Poppins,64px ,700 ,none ,none ,$def-color );
+  }
+  p{
+    @include text-controller(Montserrat,16px ,400 ,none ,none ,$def-color );
+
+  }
+  img{
+    transition:0.5s ease-in-out;
+  }
+  img:hover{
+    transform: perspective(400px) rotateY(10deg);
+  }
+}
+
+
+.tech{
+  padding-top:60px;
+  padding-bottom:60px;
+  text-align:center;
+  display:grid;
+  align-items: center;
+  place-items: center;
+  h4{
+    @include text-controller(Montserrat,12px ,700 ,uppercase ,7px ,$def-color );
+  }
+  h1{
+    @include text-controller(Poppins,64px ,700 ,none ,none ,$def-color );
+  }
+  
+  img{
+    transition:0.5s ease-in-out;
+    width:90%;
+    margin-top:10%;
+    margin-bottom:1%;
+  }
+
+  img:hover{
+    transform: scale(1.13,1.13);
+  }
+}
+
+.pre-footer{
+  background:$sec-color;
+  padding-top:60px;
+  padding-bottom:60px;
+  h4{
+    @include text-controller(Montserrat,12px ,700 ,uppercase ,7px ,$def-color );
+    margin-top:40px;
+  }
+  h1{
+    @include text-controller(Poppins,64px ,700 ,none ,none ,$def-color );
+    margin-top:20px;
+  }
+}
+
+
+.footer{
+  text-align: center;
+  padding-top:40px;
+  padding-bottom:40px;
+  display:grid;
+  align-items: center;
+  place-items: center;
+  h4{
+    @include text-controller(Montserrat,12px ,700 ,uppercase ,3px ,$def-color );
+    margin-top:40px;
+  }
+}
+
+.int-hero{
+  padding-top:60px;
+  h4{
+    @include text-controller(Montserrat,12px ,700 ,uppercase ,7px ,$def-color );
+    margin-top:16%;
+  }
+  h1{
+    @include text-controller(Poppins,64px ,700 ,none ,none ,$def-color );
+    margin-top:20px;
+  }
+  p{
+    @include text-controller(Montserrat,16px ,400 ,none ,none ,$def-color );
+  }
+  img{
+    position:relative;
+    float:right;
+    transition:0.5s ease-in-out;
+  }
+  img:hover{
+    transform: perspective(400px) rotateY(10deg);
+  }
+}
+
+
+/* Mobile Media Query adjustment area */
+
+@media screen and (max-width: 768px) {
+
+  .hamburger{
+    margin-top:-45%;
+    max-width:60px;
+    height:auto;
+  }
+
+  .content-hero{
+
+    margin-top:-45%;
+
+    h4{
+      font-size:10px;
+    }
+    h1{
+      font-size:32px;
+    }
+    span{
+      font-size:32px;
+    }
+  }
+
+  .about{
+
+    text-align: center;
+  
+    h4{
+      @include text-controller(Montserrat,10px ,700 ,uppercase ,7px ,$def-color );
+    }
+    h1{
+      @include text-controller(Poppins,32px ,700 ,none ,none ,$def-color );
+    }
+    p{
+      @include text-controller(Montserrat,14px ,400 ,none ,none ,$def-color );
+      margin-bottom:6%;
+    }
+  }
+
+  .quality{
+    padding-top:25px;
+    padding-bottom:25px;
+    h4{
+      @include text-controller(Montserrat,10px ,700 ,uppercase ,7px ,$def-color );
+    }
+    h1{
+      @include text-controller(Poppins,32px ,700 ,none ,none ,$def-color );
+    }
+  }
+
+  .portfolio-ui{
+    text-align:center;
+    h4{
+      @include text-controller(Montserrat,10px ,700 ,uppercase ,7px ,$def-color );
+    }
+    h1{
+      @include text-controller(Poppins,32px ,700 ,none ,none ,$def-color );
+    }
+  }
+  
+  .portfolio-3d{
+    text-align:center;
+    h4{
+      @include text-controller(Montserrat,10px ,700 ,uppercase ,7px ,$def-color );
+    }
+    h1{
+      @include text-controller(Poppins,32px ,700 ,none ,none ,$def-color );
+    }
+  }
+
+  .section-l{
+    padding-top:60px;
+    padding-bottom:60px;
+    text-align:center;
+    h4{
+      @include text-controller(Montserrat,10px ,700 ,uppercase ,7px ,$def-color );
+    }
+    h1{
+      @include text-controller(Poppins,32px ,700 ,none ,none ,$def-color );
+    }
+    p{
+      @include text-controller(Montserrat,14px ,400 ,none ,none ,$def-color );
+  
+    }
+  }
+
+  .section-r{
+    padding-top:60px;
+    padding-bottom:60px;
+    text-align:center;
+    h4{
+      @include text-controller(Montserrat,10px ,700 ,uppercase ,7px ,$def-color );
+    }
+    h1{
+      @include text-controller(Poppins,32px ,700 ,none ,none ,$def-color );
+    }
+    p{
+      @include text-controller(Montserrat,14px ,400 ,none ,none ,$def-color );
+  
+    }
+    img{
+      margin-bottom:60px;
+    }
+  }
+
+  .section-btn{
+    margin-bottom:60px;
+  }
+  
+  .tech{
+
+    h4{
+      @include text-controller(Montserrat,10px ,700 ,uppercase ,7px ,$def-color );
+    }
+    h1{
+      @include text-controller(Poppins,32px ,700 ,none ,none ,$def-color );
+    }
+
+  }
+
+  .pre-footer{
+    text-align:center;
+    h4{
+      @include text-controller(Montserrat,10px ,700 ,uppercase ,7px ,$def-color );
+      margin-top:40px;
+    }
+    h1{
+      @include text-controller(Poppins,32px ,700 ,none ,none ,$def-color );
+      margin-top:20px;
+    }
+  }
+
+  .int-hero{
+    padding-top:60px;
+    padding-bottom:60px;
+    text-align:center;
+    h4{
+      @include text-controller(Montserrat,10px ,700 ,uppercase ,7px ,$def-color );
+      margin-top:16%;
+    }
+    h1{
+      @include text-controller(Poppins,32px ,700 ,none ,none ,$def-color );
+      margin-top:20px;
+    }
+    p{
+      @include text-controller(Montserrat,14px ,400 ,none ,none ,$def-color );
+    }
+  }
+  
+
+}
+
+
+
+/* Tablet Media Query adjustment area */
+
+@media screen and (max-width: 1024px) and (min-width:768px) {
+
+  .hamburger{
+    margin-top:35%;
+    float:right;
+    margin-right:-25%;
+  }
+
+  .content-hero{
+    margin-top:-50%;
+  }
+
+  .portfolio-ui{
+    text-align:center;
+    h4{
+      @include text-controller(Montserrat,10px ,700 ,uppercase ,7px ,$def-color );
+    }
+    h1{
+      @include text-controller(Poppins,32px ,700 ,none ,none ,$def-color );
+    }
+  }
+
+  .portfolio-3d{
+    text-align:center;
+    h4{
+      @include text-controller(Montserrat,10px ,700 ,uppercase ,7px ,$def-color );
+    }
+    h1{
+      @include text-controller(Poppins,32px ,700 ,none ,none ,$def-color );
+    }
+  }
+
+  .section-l{
+    padding-top:60px;
+    padding-bottom:60px;
+    text-align:center;
+    h4{
+      @include text-controller(Montserrat,10px ,700 ,uppercase ,7px ,$def-color );
+    }
+    h1{
+      @include text-controller(Poppins,32px ,700 ,none ,none ,$def-color );
+    }
+    p{
+      @include text-controller(Montserrat,14px ,400 ,none ,none ,$def-color );
+  
+    }
+  }
+
+  .section-r{
+    padding-top:60px;
+    padding-bottom:60px;
+    text-align:center;
+    h4{
+      @include text-controller(Montserrat,10px ,700 ,uppercase ,7px ,$def-color );
+    }
+    h1{
+      @include text-controller(Poppins,32px ,700 ,none ,none ,$def-color );
+    }
+    p{
+      @include text-controller(Montserrat,14px ,400 ,none ,none ,$def-color );
+  
+    }
+    img{
+      margin-bottom:60px;
+    }
+  }
+
+  .section-btn{
+    margin-bottom:60px;
+  }
+  
+
+}
+
+
+/* Media Query Adjustments for the mid screens or Horizontal Tablets */
+
+
+@media screen and (max-width: 1535px) and (min-width:1025px) {
+  .hamburger{
+    float:right;
+    position:absolute;
+    right:10%;
+    top:10%;
+  }
+}
+
+
+/* CSS For the Hero Text Animation */
+
+.type-text {
+  position: relative;
+}
+
+.type-text::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: -5px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-color: $def-color;
+  animation: type .5s infinite;
+  -webkit-animation: type .5s infinite;
+}
+
+@-webkit-keyframes type {
+  0% {
+      opacity: 1;
+  }
+
+  50% {
+      opacity: .5;
+  }
+
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes type {
+  0% {
+      opacity: 1;
+  }
+
+  50% {
+      opacity: .5;
+  }
+
+  100% {
+      opacity: 0;
+  }
+}
+
+/* CSS For the Hero Text Animation Stops Here*/
+
