@@ -1909,8 +1909,10 @@ a .sp-google-img {
   .sp-hero .sp-hero-cont .sp-check-div {
     flex-wrap: nowrap;
   }
+  .sp-hero .sp-hero-cont .sp-hero-bottom {
+    justify-content: flex-start;
+  }
   .sp-hero .sp-hero-cont .sp-hero-bottom .sp-hero-form-adjust {
     margin-left: 0;
-    width: 100%;
   }
 }/*# sourceMappingURL=sp-style.css.map */
