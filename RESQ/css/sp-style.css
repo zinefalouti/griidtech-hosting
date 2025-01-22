@@ -1924,6 +1924,16 @@ a .sp-google-img {
   color: #1B1E28;
 }
 
+.third-title-lg {
+  font-size: 24px;
+  text-transform: none;
+  letter-spacing: 0px;
+  font-weight: 700;
+  color: dark;
+  margin-bottom: 20px;
+  color: #1B1E28;
+}
+
 .third-title-slim {
   font-size: 32px;
   text-transform: none;
