@@ -383,7 +383,7 @@ body{
   background-color:$sec-color;
   padding-top:60px;
   padding-bottom:60px;
-  text-align:right;
+  text-align:left;
   h4{
     @include text-controller(Montserrat,12px ,700 ,uppercase ,7px ,$def-color );
   }
@@ -480,6 +480,43 @@ body{
   }
 }
 
+
+.ml-portfolio{
+  background-image: url('../img/ml-bg.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat;
+  padding-top:40px;
+  padding-bottom:40px;
+  h4{
+    @include text-controller(Montserrat,12px ,700 ,uppercase ,7px ,$def-color );
+  }
+  h1{
+    @include text-controller(Poppins,64px ,700 ,none ,none ,$def-color );
+  }
+
+}
+
+.Ml-Actions{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap:wrap;
+  gap:20px;
+
+  a{
+     background-color: #9F66FC;
+     padding:10px 20px 10px 20px;
+     border-radius:40px;
+     color:#111A25;
+     font-weight:900;
+
+     &:hover{
+      background-color: #4A1F90;
+      color:#ffffff;
+      transition:0.43s ease-in-out;
+     }
+  }
+}
 
 /* Mobile Media Query adjustment area */
 
@@ -634,6 +671,7 @@ body{
   
 
 }
+
 
 
 

@@ -476,7 +476,7 @@ body {
   background-color: #111A25;
   padding-top: 60px;
   padding-bottom: 60px;
-  text-align: right;
+  text-align: left;
 }
 .section-r h4 {
   font-family: Montserrat;
@@ -621,6 +621,50 @@ body {
 }
 .int-hero img:hover {
   transform: perspective(400px) rotateY(10deg);
+}
+
+.ml-portfolio {
+  background-image: url("../img/ml-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.ml-portfolio h4 {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  color: #ffffff;
+}
+.ml-portfolio h1 {
+  font-family: Poppins;
+  font-size: 64px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: none;
+  color: #ffffff;
+}
+
+.Ml-Actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.Ml-Actions a {
+  background-color: #9F66FC;
+  padding: 10px 20px 10px 20px;
+  border-radius: 40px;
+  color: #111A25;
+  font-weight: 900;
+}
+.Ml-Actions a:hover {
+  background-color: #4A1F90;
+  color: #ffffff;
+  transition: 0.43s ease-in-out;
 }
 
 /* Mobile Media Query adjustment area */
