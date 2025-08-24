@@ -623,6 +623,35 @@ body {
   transform: perspective(400px) rotateY(10deg);
 }
 
+.int-hero2 {
+  margin-top: 60px;
+}
+.int-hero2 h4 {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  color: #ffffff;
+}
+.int-hero2 h1 {
+  font-family: Poppins;
+  font-size: 64px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: none;
+  color: #ffffff;
+  margin-top: 20px;
+}
+.int-hero2 p {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: none;
+  color: #ffffff;
+}
+
 .ml-portfolio {
   background-image: url("../img/ml-bg.jpg");
   background-size: cover;
@@ -655,7 +684,7 @@ body {
   gap: 20px;
 }
 .Ml-Actions a {
-  background-color: #9F66FC;
+  background: linear-gradient(90deg, #9F66FC 0%, #DCC7FF 100%);
   padding: 10px 20px 10px 20px;
   border-radius: 40px;
   color: #111A25;
@@ -675,7 +704,7 @@ body {
     height: auto;
   }
   .content-hero {
-    margin-top: -45%;
+    margin-top: -55%;
   }
   .content-hero h4 {
     font-size: 10px;
@@ -1055,4 +1084,39 @@ body {
     opacity: 0;
   }
 }
-/* CSS For the Hero Text Animation Stops Here*//*# sourceMappingURL=style.css.map */
+/* CSS For the Hero Text Animation Stops Here*/
+.portfolioImg {
+  min-width: 100%;
+}
+
+.DetaiBlock {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.DetaiBlock img {
+  width: 60px;
+  height: auto;
+}
+
+.PrevBlock {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.PrevBlock a {
+  font-size: 1rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #9F66FC 0%, #DCC7FF 100%);
+  border-radius: 40px;
+  padding: 10px 30px;
+  color: #111A25;
+}
+.PrevBlock a:hover {
+  background: linear-gradient(90deg, #9F66FC 20%, #DCC7FF 100%);
+  transition: 0.36s ease-in-out;
+}/*# sourceMappingURL=style.css.map */
