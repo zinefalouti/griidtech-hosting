@@ -58,7 +58,7 @@ body{
 
         li{
           float:left;
-          @include margin-controller(7%,0 ,6% ,0 );
+          @include margin-controller(9%,0 ,7% ,0 );
           a{
             display: block;
             text-align:center;
@@ -481,6 +481,20 @@ body{
 }
 
 
+.int-hero2{
+  margin-top:60px;
+  h4{
+    @include text-controller(Montserrat,12px ,700 ,uppercase ,7px ,$def-color );
+  }
+  h1{
+    @include text-controller(Poppins,64px ,700 ,none ,none ,$def-color );
+    margin-top:20px;
+  }
+  p{
+    @include text-controller(Montserrat,16px ,400 ,none ,none ,$def-color );
+  }
+}
+
 .ml-portfolio{
   background-image: url('../img/ml-bg.jpg');
   background-size: cover; 
@@ -504,7 +518,7 @@ body{
   gap:20px;
 
   a{
-     background-color: #9F66FC;
+     background: linear-gradient(90deg, #9F66FC 0%, #DCC7FF 100%);
      padding:10px 20px 10px 20px;
      border-radius:40px;
      color:#111A25;
@@ -530,7 +544,7 @@ body{
 
   .content-hero{
 
-    margin-top:-45%;
+    margin-top:-55%;
 
     h4{
       font-size:10px;
@@ -814,3 +828,136 @@ body{
 
 /* CSS For the Hero Text Animation Stops Here*/
 
+.portfolioImg{
+  min-width:100%;
+}
+
+.DetaiBlock{
+  display:flex;
+  justify-content: center;
+  gap:20px;
+  align-items: center;
+  flex-wrap:wrap;
+
+  img{
+    width:60px;
+    height:auto;
+  }
+}
+
+.PrevBlock{
+  display:flex;
+  justify-content: center;
+  gap:30px;
+  align-items: center;
+  flex-wrap: wrap;
+
+  a{
+    font-size:1rem;
+    font-weight:700;
+    background: linear-gradient(90deg, #9F66FC 0%, #DCC7FF 100%);
+    border-radius: 40px;
+    padding:10px 30px;
+    color:#111A25;
+
+    &:hover{
+      background: linear-gradient(90deg, #9F66FC 20%, #DCC7FF 100%);
+      transition: 0.36s ease-in-out;
+    }
+  }
+}
+
+
+/* Map SCSS */
+
+.map-section{
+  background:$sec-color;
+  padding-top:60px;
+  padding-bottom:60px;
+  text-align:center;
+  h4{
+    @include text-controller(Montserrat,12px ,700 ,uppercase ,7px ,$def-color );
+  }
+  h1{
+    @include text-controller(Poppins,64px ,700 ,none ,none ,$def-color );
+  }
+}
+
+.world-map{
+
+  position:relative;
+  margin-top:40px;
+  img{
+    width:100%;
+    height:auto;
+    display:block;
+    opacity:0.3;
+  }
+}
+
+/* Circle size is a % of the map width; area is proportional to 75 / 15 / 10 */
+.map-dot{
+  position:absolute;
+  left:var(--x);
+  top:var(--y);
+  width:var(--size);
+  aspect-ratio:1 / 1;
+  transform:translate(-50%, -50%);
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(159,102,252,0.85) 0%, rgba(159,102,252,0.35) 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  &::before,
+  &::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    border:2px solid #9F66FC;
+    animation:mapPulse 3s ease-out infinite;
+  }
+  &::after{
+    animation-delay:1.5s;
+  }
+
+  .dot-label{
+    position:relative;
+    z-index:2;
+    @include text-controller(Poppins,32px ,700 ,none ,none ,$def-color );
+    line-height:1;
+    small{
+      display:block;
+      margin-top:6px;
+      @include text-controller(Montserrat,10px ,700 ,uppercase ,3px ,$def-color );
+    }
+  }
+}
+
+/* Positions = ((lon+180)/360, (90-lat)/180). Nudge if your map differs. */
+.dot-us{ --x:22.8%; --y:30%; --size:26%; }
+.dot-eu{ --x:53%;   --y:23%; --size:11.6%; }
+.dot-au{ --x:87%;   --y:66%; --size:9.5%; }
+
+@keyframes mapPulse{
+  0%{ transform:scale(1); opacity:0.8; }
+  100%{ transform:scale(1.6); opacity:0; }
+}
+
+@media screen and (max-width: 768px) {
+  .map-section{
+    h4{
+      @include text-controller(Montserrat,10px ,700 ,uppercase ,7px ,$def-color );
+    }
+    h1{
+      @include text-controller(Poppins,32px ,700 ,none ,none ,$def-color );
+    }
+  }
+  .map-dot .dot-label{
+    font-size:16px;
+    small{
+      display:none;
+    }
+  }
+}

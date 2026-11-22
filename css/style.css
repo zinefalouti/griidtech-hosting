@@ -22,9 +22,9 @@ body {
 }
 .navigation ul li {
   float: left;
-  margin-top: 7%;
+  margin-top: 9%;
   margin-bottom: 0;
-  margin-right: 6%;
+  margin-right: 7%;
   margin-left: 0;
 }
 .navigation ul li a {
@@ -623,6 +623,35 @@ body {
   transform: perspective(400px) rotateY(10deg);
 }
 
+.int-hero2 {
+  margin-top: 60px;
+}
+.int-hero2 h4 {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  color: #ffffff;
+}
+.int-hero2 h1 {
+  font-family: Poppins;
+  font-size: 64px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: none;
+  color: #ffffff;
+  margin-top: 20px;
+}
+.int-hero2 p {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: none;
+  color: #ffffff;
+}
+
 .ml-portfolio {
   background-image: url("../img/ml-bg.jpg");
   background-size: cover;
@@ -655,7 +684,7 @@ body {
   gap: 20px;
 }
 .Ml-Actions a {
-  background-color: #9F66FC;
+  background: linear-gradient(90deg, #9F66FC 0%, #DCC7FF 100%);
   padding: 10px 20px 10px 20px;
   border-radius: 40px;
   color: #111A25;
@@ -675,7 +704,7 @@ body {
     height: auto;
   }
   .content-hero {
-    margin-top: -45%;
+    margin-top: -55%;
   }
   .content-hero h4 {
     font-size: 10px;
@@ -1055,4 +1084,175 @@ body {
     opacity: 0;
   }
 }
-/* CSS For the Hero Text Animation Stops Here*//*# sourceMappingURL=style.css.map */
+/* CSS For the Hero Text Animation Stops Here*/
+.portfolioImg {
+  min-width: 100%;
+}
+
+.DetaiBlock {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.DetaiBlock img {
+  width: 60px;
+  height: auto;
+}
+
+.PrevBlock {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.PrevBlock a {
+  font-size: 1rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #9F66FC 0%, #DCC7FF 100%);
+  border-radius: 40px;
+  padding: 10px 30px;
+  color: #111A25;
+}
+.PrevBlock a:hover {
+  background: linear-gradient(90deg, #9F66FC 20%, #DCC7FF 100%);
+  transition: 0.36s ease-in-out;
+}
+
+/* Map SCSS */
+.map-section {
+  background: #111A25;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+.map-section h4 {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  color: #ffffff;
+}
+.map-section h1 {
+  font-family: Poppins;
+  font-size: 64px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: none;
+  color: #ffffff;
+}
+
+.world-map {
+  position: relative;
+  margin-top: 40px;
+}
+.world-map img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.3;
+}
+
+/* Circle size is a % of the map width; area is proportional to 75 / 15 / 10 */
+.map-dot {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  aspect-ratio: 1/1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(159, 102, 252, 0.85) 0%, rgba(159, 102, 252, 0.35) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map-dot::before, .map-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #9F66FC;
+  animation: mapPulse 3s ease-out infinite;
+}
+.map-dot::after {
+  animation-delay: 1.5s;
+}
+.map-dot .dot-label {
+  position: relative;
+  z-index: 2;
+  font-family: Poppins;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: none;
+  color: #ffffff;
+  line-height: 1;
+}
+.map-dot .dot-label small {
+  display: block;
+  margin-top: 6px;
+  font-family: Montserrat;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ffffff;
+}
+
+/* Positions = ((lon+180)/360, (90-lat)/180). Nudge if your map differs. */
+.dot-us {
+  --x:22.8%;
+  --y:30%;
+  --size:26%;
+}
+
+.dot-eu {
+  --x:53%;
+  --y:23%;
+  --size:11.6%;
+}
+
+.dot-au {
+  --x:87%;
+  --y:66%;
+  --size:9.5%;
+}
+
+@keyframes mapPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .map-section h4 {
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    color: #ffffff;
+  }
+  .map-section h1 {
+    font-family: Poppins;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: none;
+    color: #ffffff;
+  }
+  .map-dot .dot-label {
+    font-size: 16px;
+  }
+  .map-dot .dot-label small {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
